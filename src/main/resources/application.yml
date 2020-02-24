@@ -1,0 +1,31 @@
+##端口号
+server:
+  port: 8080
+  servlet:
+    context-path: /crm
+
+##mybatis配置
+mybatis:
+  mapper-locations: /mappers/*.xml
+  type-aliases-package: com.shsxt.crm.vo;com.shsxt.crm.query;com.shsxt.crm.dto
+  configuration:
+    map-underscore-to-camel-case: true
+
+##pagehelper分页配置
+pagehelper:
+  helper-dialect: mysql
+
+##c3p0数据源配置
+spring:
+  datasource:
+    type: com.mchange.v2.c3p0.debug.AfterCloseLoggingComboPooledDataSource
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/crm01?useUnicode=true&characterEncoding=utf8&serverTimezone=GMT%2B8
+    username: root
+    password: root
+##freemarker配置
+  freemarker:
+    charset: UTF-8
+    template-loader-path: classpath:/views
+    content-type: text/html
+    suffix: .ftl
