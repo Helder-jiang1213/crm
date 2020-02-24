@@ -1,4 +1,4 @@
 # Created by .ignore support plugin (hsz.mobi)
-!/.idea/
-!/shsxt_crm.iml
-!/target
+/.idea/
+/shsxt_crm.iml
+/target
