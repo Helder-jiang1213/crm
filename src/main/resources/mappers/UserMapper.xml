@@ -21,8 +21,14 @@
     from t_user
     where id = #{id,jdbcType=INTEGER}
   </select>
+    <select id="queryUserByUserName" resultType="com.shsxt.crm.vo.User" parameterType="string">
+      select <include refid="Base_Column_List"/>
+      from t_user
+      where is_valid=1 and user_name=#{userName}
 
-  <insert id="insertSelective" parameterType="com.shsxt.crm.vo.User" >
+    </select>
+
+    <insert id="insertSelective" parameterType="com.shsxt.crm.vo.User" >
     insert into t_user
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="id != null" >
